@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  serializer-proxy:
+    image: swalrus/soa1:proxy
+    ports:
+      - "2000:2000"
+
+  serializer-gob:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=gob
+
+  serializer-xml:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=xml
+
+  serializer-json:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=json
+
+  serializer-protobuf:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=protobuf
+
+  serializer-avro:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=avro
+
+  serializer-yaml:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=yaml
+
+  serializer-message-pack:
+    image: swalrus/soa1:serializer
+    environment:
+      - S_FORMAT=message-pack
